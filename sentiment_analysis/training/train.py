@@ -119,9 +119,17 @@ def evaluate_model(
 
     y_pred = model.predict(x_test)
     accuracy = accuracy_score(y_test, y_pred)
-    precision, recall, f1, _ = precision_recall_fscore_support(
-        y_test, y_pred, average="binary", zero_division=0
+
+    unique_labels = np.unique(y_test)
+    if len(unique_labels) == 2:
+        precision, recall, f1, _ = precision_recall_fscore_support(
+            y_test, y_pred, average="binary", zero_division=0
     )
+    else:
+
+        precision, recall, f1, _ = precision_recall_fscore_support(
+            y_test, y_pred, average="macro", zero_division=0
+        )
 
     if print_report:
 
