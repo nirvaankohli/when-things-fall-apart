@@ -22,11 +22,6 @@ from sklearn.metrics import (
 from sklearn.utils import Bunch
 
 
-def train_test_split():
-
-    pass
-
-
 def lprint(if_print: bool, *args):
 
     if if_print:
@@ -67,7 +62,7 @@ class TrainConfig:
     MODEL_REPORTS_DIR: str = "model_reports"
     ROOT_DIR = Path(__file__).parent.parent
     DATA_PATH: str = ROOT_DIR / "data/data.csv"
-    CLEANED_OUT: str = "data/cleaned_data.csv"
+    CLEANED_OUT: str = ROOT_DIR / "data/cleaned_data.csv"
     MAX_FEATURES: int = 200_000
     MIN_DF: int = 5
     NGRAM_RANGE: tuple[int, int] = (1, 2)
@@ -221,7 +216,7 @@ def main():
 
     print_between_dividers(if_print, f"[3/{total_parts}] Building vectorizer...")
 
-    vec = build_vectorizer(cfg)
+    vec = build_vectorizer(config)
 
     lprint(if_print, "Success! \n")
 
