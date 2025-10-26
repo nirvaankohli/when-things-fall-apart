@@ -20,7 +20,7 @@ res = subprocess.run(
 res = subprocess.run(
     ["playwright", "install", "chromium"], capture_output=True, text=True
 )
-res = subprocess.run(["playwright", "install-deps"], capture_output=True, text=True)
+res = subprocess.run([sys.executable, "playwright", "install-deps"], capture_output=True, text=True)
 if sys.platform.startswith("win"):
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
 
