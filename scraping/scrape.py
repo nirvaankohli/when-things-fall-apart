@@ -1,5 +1,10 @@
 from playwright.sync_api import sync_playwright
 import json, re, datetime, time, random
+import sys
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from process import Process
 
 
@@ -175,6 +180,17 @@ class Scraper:
 
             self.raw_file = records
             return records
+
+    def get_estimated_time(self):
+
+        estimated_scroll_time = (
+            self.MAX_SCROLLS * (self.SCROLL_PAUSE_MIN + self.SCROLL_PAUSE_MAX) / 2
+        )
+        estimated_request_time = (
+            self.MAX_TWEETS * (self.REQUEST_DELAY_MIN + self.REQUEST_DELAY_MAX) / 2
+        )
+        estimated_total = estimated_scroll_time + estimated_request_time
+        return estimated_total
 
     def scrape_and_process(self, user):
 
