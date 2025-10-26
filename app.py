@@ -8,25 +8,14 @@ import re
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
+import subprocess
 
-import sys, subprocess
-
-res = subprocess.run(
+subprocess.run(
     [sys.executable, "-m", "playwright", "install", "--with-deps", "firefox"],
-    capture_output=True,
-    text=True,
+    check=True,
 )
 
-res = subprocess.run(
-    ["playwright", "install", "chromium"], capture_output=True, text=True
-)
-res = subprocess.run(
-    "sudo playwright install-deps",
-    shell=True,
-    check=True,
-    capture_output=True,
-    text=True,
-)
+
 if sys.platform.startswith("win"):
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
 
