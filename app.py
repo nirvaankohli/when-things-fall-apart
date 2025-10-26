@@ -8,12 +8,6 @@ import re
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
-import subprocess
-
-subprocess.run(
-    [sys.executable, "-m", "playwright", "install", "--with-deps", "firefox"],
-    check=True,
-)
 
 
 if sys.platform.startswith("win"):
