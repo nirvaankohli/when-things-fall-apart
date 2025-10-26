@@ -1,7 +1,7 @@
 # When Things Fall Apart - Twitter Sentiment Analyzer
 
 A comprehensive Twitter sentiment analysis tool that scrapes user tweets and analyzes emotional patterns over time, with a special focus on identifying periods of sustained negativity.
-
+https://hc-cdn.hel1.your-objectstorage.com/s/v3/d1c6ecb68f884e269c1f926043e109a68c6daa85_screen_recording_2025-10-26_181314.mp4
 ## Quick Start
 
 1. **Install Dependencies**
