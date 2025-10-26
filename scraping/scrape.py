@@ -34,12 +34,13 @@ class Scraper:
 
     def setup_browser(self, p):
 
-        b = p.firefox.launch(
+        b = p.chromium.launch(
             headless=True,
             args=[
                 "--no-sandbox",
                 "--disable-dev-shm-usage",
-                "--disable-blink-features=AutomationControlled",
+                "--disable-gpu",
+                "--disable-setuid-sandbox",
             ],
         )
 

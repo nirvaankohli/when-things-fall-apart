@@ -18,7 +18,7 @@ res = subprocess.run(
 )
 
 res = subprocess.run(
-    ["playwright", "install", "firefox"], capture_output=True, text=True
+    ["playwright", "install", "chromium"], capture_output=True, text=True
 )
 
 if sys.platform.startswith("win"):
