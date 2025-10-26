@@ -14,8 +14,10 @@ import sys, subprocess
 res = subprocess.run(
     [sys.executable, "-m", "playwright", "install", "--with-deps", "firefox"],
     capture_output=True,
-    text=True
+    text=True,
 )
+
+res = dsubprocess.run(["playwright", "install"], capture_output=True, text=True)
 
 if sys.platform.startswith("win"):
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
